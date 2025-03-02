@@ -42,7 +42,7 @@ jobs:
       run: lcov --capture --directory build --output-file coverage.info & lcov --remove coverage.info '/usr/*' '*/test/*' '*/gtest*' --output-file coverage.filtered.info & genhtml coverage.filtered.info -num-spaces 4 -s --legend -o coverage_report
 
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: coverage
         path: ${{github.workspace}}/build/coverage_report/
