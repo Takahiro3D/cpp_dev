@@ -44,12 +44,12 @@ jobs:
 
     - name: Collect Coverages
       working-directory: ${{github.workspace}}
-      # genhtml returns error as mismatched end line even the file is not changed.  
+      # lcov returns error as mismatched end line even the file is not changed.  
       # Set `--ignore-errors mismatch` as temporary solution.
       run: |
-        lcov --capture --directory build --output-file coverage.info
-        lcov --remove coverage.info '/usr/*' '*/test/*' '*/gtest*' --output-file coverage.filtered.info
-        genhtml coverage.filtered.info --num-spaces 4 -s --legend -o coverage_report --ignore-errors mismatch
+        lcov --capture --directory build --output-file coverage.info --ignore-errors mismatch
+        lcov --remove coverage.info '/usr/*' '*/test/*' '*/gtest*' --output-file coverage.filtered.info --ignore-errors mismatch
+        genhtml coverage.filtered.info --num-spaces 4 -s --legend -o coverage_report
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
