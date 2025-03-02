@@ -24,6 +24,9 @@ jobs:
 
     - name: Install dependency
       run: sudo apt-get update && sudo apt-get install -y lcov
+      
+    - name: Sync GCOV with GCC
+      run: echo "GCOV=$(which gcov-$(gcc -dumpversion | cut -d. -f1))" >> $GITHUB_ENV
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
