@@ -55,4 +55,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: coverage
-        path: ${{github.workspace}}/build/coverage_report/
+        path: ${{github.workspace}}/coverage_report/
