@@ -1,5 +1,7 @@
 # C++ development sample
 
+![cmake-single-platform](https://github.com/Takahiro3D/cpp_dev/actions/workflows/cmake-single-platform.yml/badge.svg)
+
 ## test platform
 
 ### Commands
