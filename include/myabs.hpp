@@ -1,0 +1,2 @@
+
+int myabs(int value);

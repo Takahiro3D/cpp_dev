@@ -1,0 +1,4 @@
+build/*
+coverage_report/*
+coverage.filtered.info
+coverage.info
